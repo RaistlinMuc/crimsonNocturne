@@ -4,6 +4,12 @@ Crimson Nocturne is a one-file, survivors-style gothic autoshooter built with pl
 
 This build started as a one-prompt test against GPT-5.4 Pro and then received one targeted fix with Codex 5.4.
 
+## Original Prompt
+
+```text
+Make a vampire survivors autoshooter. Focus on making it as visually exciting, stunning, and complex as possible.
+```
+
 ## Play Now
 
 [Play Crimson Nocturne](https://raistlinmuc.github.io/crimsonNocturne/index.html?autostart=1)
