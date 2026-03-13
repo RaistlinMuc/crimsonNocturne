@@ -1,0 +1,11 @@
+{
+  "name": "crimson-nocturne",
+  "private": true,
+  "scripts": {
+    "capture:media": "node scripts/capture-media.js",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}

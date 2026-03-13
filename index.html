@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>Crimson Nocturne — Survivors-like Autoshooter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="hud">
+    <div class="hud-row">
+      <div id="statusPanel" class="panel">
+        <div class="row">
+          <div>
+            <div class="label">Survivor</div>
+            <div class="big">Crimson Warden</div>
+          </div>
+          <div class="tiny muted" id="clockText">00:00</div>
+        </div>
+        <div style="margin-top:10px">
+          <div class="row tiny"><span>Vitality</span><span id="hpText">120 / 120</span></div>
+          <div class="bar"><span id="hpFill"></span></div>
+        </div>
+        <div style="margin-top:10px">
+          <div class="row tiny"><span>Experience</span><span id="xpText">0 / 30</span></div>
+          <div class="bar blue"><span id="xpFill"></span></div>
+        </div>
+        <div class="miniGrid tiny">
+          <div>Level <strong id="levelText">1</strong></div>
+          <div>Score <strong id="scoreText">0</strong></div>
+          <div>Kills <strong id="killsText">0</strong></div>
+          <div>Best <strong id="bestText">0</strong></div>
+        </div>
+      </div>
+
+      <div id="bossPanel" class="panel">
+        <div class="row">
+          <div>
+            <div class="label">Apex Horror</div>
+            <div class="big" id="bossName">—</div>
+          </div>
+          <div class="tiny muted" id="bossState">Manifesting</div>
+        </div>
+        <div class="bar gold"><span id="bossFill" style="width:0%"></span></div>
+      </div>
+
+      <div id="weaponsPanel" class="panel">
+        <div class="label">Arsenal & Relics</div>
+        <div id="weaponsList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="centerMessage">
+    <div class="title" id="centerTitle"></div>
+    <div class="sub" id="centerSub"></div>
+  </div>
+
+  <div id="overlay">
+    <div id="titleScreen" class="screen">
+      <div class="kicker">Procedural gothic arcade carnage</div>
+      <h1>Crimson<br>Nocturne</h1>
+      <p>
+        A lavish, original survivors-style autoshooter inspired by the genre: pilot the Crimson Warden through a moonlit cemetery,
+        auto-cast occult weapons, vacuum up souls, stack absurd upgrades, and outlast escalating swarms of bats, cultists, witches,
+        specters, chargers, and boss vampires in a storm of particles, lightning, sigils, and blood-red bloom.
+      </p>
+      <div class="titleGrid">
+        <div class="infoCard">
+          <h3>Controls</h3>
+          <div class="small">
+            Move with <span class="kbd">W</span><span class="kbd">A</span><span class="kbd">S</span><span class="kbd">D</span> or arrows.
+            Dash with <span class="kbd">Space</span>. Pause with <span class="kbd">P</span> or <span class="kbd">Esc</span>.
+            Autoshooting is always on. During level-up, choose cards with <span class="kbd">1</span><span class="kbd">2</span><span class="kbd">3</span>.
+          </div>
+          <div class="badges">
+            <div class="badge">Auto-aiming blood bolts</div>
+            <div class="badge">Orbiting coffin blades</div>
+            <div class="badge">Chain lightning</div>
+            <div class="badge">Reaper scythes</div>
+            <div class="badge">Inferno novas</div>
+            <div class="badge">Bone drones</div>
+            <div class="badge">Legendary relic synergies</div>
+          </div>
+        </div>
+        <div class="infoCard">
+          <h3>Run Flow</h3>
+          <div class="small">
+            Survive as long as possible. Every few levels and boss kills, the build opens into stranger, louder, and deadlier combinations.
+            The whole battlefield is hand-drawn in code: moon halos, graveyard silhouettes, drifting fog, occult ground sigils, bloom glows,
+            impact flash, screen shake, damage numbers, soul wisps, and delayed boss telegraphs.
+          </div>
+          <div class="small" style="margin-top:10px">Best score saved locally: <strong id="titleBestText">0</strong></div>
+        </div>
+      </div>
+      <div class="buttonRow">
+        <button id="startBtn">Begin the Hunt</button>
+        <button id="muteBtn" class="secondary">Audio: On</button>
+      </div>
+    </div>
+
+    <div id="levelScreen" class="screen hidden">
+      <h2>Level Up</h2>
+      <div class="sub">Choose a blessing of the night</div>
+      <div id="cardGrid"></div>
+      <div class="footNote">Press <span class="kbd">1</span><span class="kbd">2</span><span class="kbd">3</span> or click a card.</div>
+    </div>
+
+    <div id="gameOverScreen" class="screen hidden">
+      <h2>Fallen</h2>
+      <div class="sub">The cemetery drinks deep</div>
+      <div id="summaryGrid">
+        <div class="summary"><div class="n" id="sumTime">00:00</div><div class="t">Survival Time</div></div>
+        <div class="summary"><div class="n" id="sumLevel">1</div><div class="t">Final Level</div></div>
+        <div class="summary"><div class="n" id="sumKills">0</div><div class="t">Kills</div></div>
+        <div class="summary"><div class="n" id="sumScore">0</div><div class="t">Score</div></div>
+      </div>
+      <div class="footNote" id="gameOverText">A brutal end under the blood moon.</div>
+      <div class="buttonRow">
+        <button id="restartBtn">Rise Again</button>
+        <button id="titleBtn" class="secondary">Back to Title</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
