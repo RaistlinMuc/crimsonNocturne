@@ -7,8 +7,9 @@ const baseUrl = process.env.CRIMSON_BASE_URL || 'http://127.0.0.1:4173';
 const screenshotDir = path.join(ROOT, 'media', 'screenshots');
 const videoDir = path.join(ROOT, 'media', 'video');
 const tempVideoDir = path.join(videoDir, 'tmp');
+const frameDir = path.join(tempVideoDir, 'gif-frames');
 
-for (const dir of [screenshotDir, videoDir, tempVideoDir]) {
+for (const dir of [screenshotDir, videoDir, tempVideoDir, frameDir]) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
@@ -90,6 +91,16 @@ async function captureVideo(browser) {
   const page = await context.newPage();
   await page.goto(`${baseUrl}/index.html?autostart=1`);
   await waitFrames(page);
+  for (const entry of fs.readdirSync(frameDir)) {
+    fs.unlinkSync(path.join(frameDir, entry));
+  }
+  for (let i = 0; i < 28; i++) {
+    await driveDemo(page, 220);
+    await page.screenshot({
+      path: path.join(frameDir, `frame-${String(i).padStart(3, '0')}.png`),
+    });
+  }
+  await page.waitForTimeout(300);
   await driveDemo(page, 18000);
   const video = page.video();
   await context.close();

@@ -2,24 +2,17 @@
 
 Crimson Nocturne is a one-file, survivors-style gothic autoshooter built with plain HTML, CSS, and canvas-powered JavaScript. It drops the Crimson Warden into a moonlit cemetery full of swarms, bosses, relic synergies, particle-heavy combat, and fast arcade movement.
 
+This build started as a one-prompt test against GPT-5.4 Pro and then received one targeted fix with Codex 5.4.
+
 ## Play Now
 
 [Play Crimson Nocturne](https://raistlinmuc.github.io/crimsonNocturne/index.html?autostart=1)
 
 ## Gameplay Preview
 
-<video
-  src="https://raw.githubusercontent.com/RaistlinMuc/crimsonNocturne/main/media/video/crimson-nocturne-demo.webm"
-  controls
-  muted
-  playsinline
-  preload="metadata"
-  width="100%"
->
-  Your browser does not support embedded video playback.
-</video>
+[![Gameplay preview](media/video/crimson-nocturne-demo.gif)](https://github.com/RaistlinMuc/crimsonNocturne/blob/main/media/video/crimson-nocturne-demo.webm)
 
-[Open the gameplay video directly](https://raw.githubusercontent.com/RaistlinMuc/crimsonNocturne/main/media/video/crimson-nocturne-demo.webm)
+Click the preview to open the gameplay video on GitHub.
 
 ## Screenshots
 

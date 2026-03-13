@@ -2,7 +2,7 @@
   "name": "crimson-nocturne",
   "private": true,
   "scripts": {
-    "capture:media": "node scripts/capture-media.js",
+    "capture:media": "node scripts/capture-media.js && python3 scripts/build-demo-gif.py",
     "test:e2e": "playwright test"
   },
   "devDependencies": {
